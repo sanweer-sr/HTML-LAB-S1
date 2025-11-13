@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 { color: #1877f2; }
+    form {
+      background: #fff;
+      max-width: 450px;
+      width: 100%;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .form-group, fieldset { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; font-weight: 600; }
+    input, textarea, select {
+      width: 100%; padding: 10px; border: 1px solid #ccc;
+      border-radius: 5px; box-sizing: border-box;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #1877f2; outline: none;
+    }
+    textarea { resize: vertical; }
+    fieldset {
+      border: 1px solid #ccc; border-radius: 5px; padding: 10px;
+    }
+    legend { font-weight: 600; }
+    .input-inline-group { display: flex; gap: 10px; flex-wrap: wrap; }
+    .inline-item { display: flex; align-items: center; gap: 5px; }
+    .button-group { text-align: center; margin-top: 20px; }
+    button {
+      padding: 10px 20px; border: none; border-radius: 5px;
+      font-weight: bold; color: #fff; cursor: pointer;
+    }
+    button[type=submit] { background: #1877f2; }
+    button[type=reset] { background: #6c757d; }
+    button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <h1>📝 REGISTRATION FORM</h1>
+  <form>
+    <div class="form-group"><label>Name:</label><input type="text" maxlength="20" required></div>
+    <div class="form-group"><label>Password:</label><input type="password" maxlength="10" required></div>
+    <div class="form-group"><label>Mobile No:</label><input type="tel" pattern="[0-9]{10}" maxlength="10" required></div>
+    <div class="form-group"><label>Address:</label><textarea required></textarea></div>
+    <div class="form-group"><label>Date of Birth:</label><input type="date" required></div>
+    <div class="form-group"><label>Email:</label><input type="email" maxlength="30" required></div>
+    <div class="form-group">
+      <label>Nationality:</label>
+      <select required>
+        <option value="" disabled selected>Select your nationality</option>
+        <option>India</option><option>Non Indian</option>
+      </select>
+    </div>
+    <fieldset>
+      <legend>Gender:</legend>
+      <div class="input-inline-group">
+        <label class="inline-item"><input type="radio" name="gender" required>Male</label><br>
+        <label class="inline-item"><input type="radio" name="gender">Female</label><br>
+        <label class="inline-item"><input type="radio" name="gender">Other</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Language Known:</legend>
+      <div class="input-inline-group">
+        <label class="inline-item"><input type="checkbox">English</label><br>
+        <label class="inline-item"><input type="checkbox">Malayalam</label><br>
+        <label class="inline-item"><input type="checkbox">Hindi</label><br>
+        <label class="inline-item"><input type="checkbox">Tamil</label>
+      </div>
+    </fieldset>
+    <div class="button-group">
+      <button type="reset">Cancel</button>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</body>
+</html>
