@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Changing image and text</title>
+	<style>
+		img{
+		max-width:100%;
+		border:2px solid green;
+		border-radius:50%;
+		padding:5px;
+		height:auto;
+		}
+		#p1{
+		position:relative;
+		justify-space: center;
+		font-size:30px;
+		}
+	</style>
+	<script>
+		function one()
+		{
+		document.getElementById("img").src="https://cdn.pixabay.com/photo/2023/07/02/01/08/ai-generated-8101113_960_720.png";
+		document.getElementById("p1").innerHTML= "ONMOUSEOVER";
+		document.getElementById("p1").style.color= "violet";
+		}
+		function two()
+		{
+		document.getElementById("img").src="https://cdn.pixabay.com/photo/2023/11/06/16/31/mountain-8370051_960_720.jpg";
+		document.getElementById("p1").innerHTML= "ONMOUSEOUT";
+		document.getElementById("p1").style.color= "red";
+		}
+		function three()
+		{
+		document.getElementById("img").src="https://cdn.pixabay.com/photo/2022/12/30/10/52/mountain-7686642_960_720.jpg";
+		document.getElementById("p1").innerHTML= "ONCLICK";
+		document.getElementById("p1").style.color= "black";
+		document.body.style.backgroundColor = "white";
+		}
+	</script>
+</head>
+<body>
+<center>
+<b><p id="p1"></p></b>
+<img src="https://cdn.pixabay.com/photo/2023/09/30/21/16/river-8286407_960_720.png" id = "img" onclick="three()" onmouseover="one()" onmouseout="two()" width="300" height="300">
+<center>
+</body>
+</html>

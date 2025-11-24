@@ -1,0 +1,146 @@
+<html>
+<head>
+    <title>Registration Form Validation</title>
+
+    <style>
+     
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #444;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+            
+        }
+
+        input:focus {
+            border-color: #74b9ff;
+            box-shadow: 0 0 5px rgba(116, 185, 255, 0.6);
+        }
+
+       
+        .btn-group {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        button {
+            background:#007bff;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            margin: 5px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        
+        button[type="reset"] {
+            background: #d63031;
+        }
+
+
+    </style>
+
+    <script>
+        function validate() {
+            var name = document.getElementById("name").value.trim();
+            var passwd = document.getElementById("password").value;
+            var repass = document.getElementById("repassword").value;
+            var phone = document.getElementById("phone").value.trim();
+
+            if (name === "") {
+                alert('Name cannot be blank');
+                return false;
+            } else if (!isNaN(name)) {
+                alert('Name must contain only letters');
+                return false;
+            } else if (passwd === "") {
+                alert('Enter a Password');
+                return false;
+            } else if (passwd.length < 8) {
+                alert('Password requires at least 8 characters');
+                return false;
+            } else if (passwd !== repass) {
+                alert('Passwords do not match!');
+                return false;
+            } else if (phone === "") {
+                alert('Enter your phone number!');
+                return false;
+            } else if (isNaN(phone)) {
+                alert('Invalid Phone Number');
+                return false;
+            } else if (phone.length != 10) {
+                alert('Not a Valid Phone Number (need 10 digits)');
+                return false;
+            } else {
+                alert('Thank You for Registration!');
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+
+        <form onsubmit="return validate()">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" maxlength="20" placeholder="Enter your name"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" maxlength="10" placeholder="Enter password"><br><br>
+
+            <label for="repassword">Re-enter Password:</label>
+            <input type="password" id="repassword" maxlength="10" placeholder="Re-enter password"><br><br>
+
+            <label for="phone">Mobile Number:</label>
+            <input type="text" id="phone" maxlength="10" placeholder="Enter 10-digit number"><br><br>
+
+            <div class="btn-group">
+                <button type="reset">Cancel</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

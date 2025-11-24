@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>String and Math Functions in JS</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        .output {
+            margin-top: 20px;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+<script>
+	function showResults() {
+            let text = document.getElementById("stinginput").value;
+            let number = parseFloat(document.getElementById("numberinput").value);
+
+            let length = text.length;
+            let upper = text.toUpperCase();
+            let lower = text.toLowerCase();
+            let index = text.indexOf("va");
+            let sliceText = text.slice(0, 10);
+
+            let stringOutput = `
+                <h2>String Functions</h2>
+                <p><b>Original String:</b> ${text}</p>
+                <ul>
+                    <li>length</code>: ${length}</li>
+                    <li>toUpperCase(): ${upper}</li>
+                    <li>toLowerCase(): ${lower}</li>
+                    <li>indexOf("va"): ${index}</li>
+                    <li>slice(0, 10): ${sliceText}</li>
+                </ul>
+            `;
+            document.getElementById("stringExamples").innerHTML = stringOutput;
+
+         
+            let roundNum = Math.round(number);
+            let floorNum = Math.floor(number);
+            let ceilNum = Math.ceil(number);
+            let sqrtNum = Math.sqrt(number);
+            let randomNum = Math.random()*number;
+
+            let mathOutput = `
+                <h2>Math Functions</h2>
+                <p><b>Original Number:</b> ${number}</p>
+                <ul>
+                    <li>Math.round(${number}): ${roundNum}</li>
+                    <li>Math.floor(${number}): ${floorNum}</li>
+                    <li>Math.ceil(${number}): ${ceilNum}</li>
+                    <li>Math.sqrt(${number}): ${sqrtNum}</li>
+                    <li>Math.random(): ${randomNum}</li>
+                </ul>
+            `;
+            document.getElementById("mathExamples").innerHTML = mathOutput;
+        }
+    </script>
+</script>
+
+
+<body>
+	<h1>String and Math functions</h1>
+	
+	<h3>Enter a String to check:</h3>
+	<input id="stinginput" placeholder="Enter String....">
+
+	<h3>Enter a Number to check:</h3>
+	<input id="numberinput" placeholder="Enter Number....">
+
+	<br>
+	<button onclick="showResults()" type="submit">Check Outputs</button>
+	
+	
+	<div id="stringExamples" class="output"></div>
+    	<div id="mathExamples" class="output"></div>
+
+</body>
+<html>

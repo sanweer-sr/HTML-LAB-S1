@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>String and Math Functions in JavaScript</title>
+    <link rel="stylesheet" href="style1.css"> <!-- added -->
+</head>
+<body>
+    <script>
+        function show() {
+            let text = "Enter the Text to be diaplayed";
+            
+            let length = text.length;
+            let upper = text.toUpperCase();
+            let lower = text.toLowerCase();
+            let index = text.indexOf("Java");
+            let sliceText = text.slice(0, 10);
+
+            document.write(`<div class='container'>`);
+            document.write(`<h2>String & Math Output</h2>`);
+            document.write(`Length: ${length}<br>`);
+            document.write(`Uppercase: ${upper}<br>`);
+            document.write(`Lowercase: ${lower}<br>`);
+            document.write(`Index of 'Java': ${index}<br>`);
+            document.write(`Sliced Text: ${sliceText}<br><br>`);
+
+            let number = parseFloat(22.568);
+            let roundNum = Math.round(number);
+            let floorNum = Math.floor(number);
+            let ceilNum = Math.ceil(number);
+            let sqrtNum = Math.sqrt(number);
+            let randomNum = Math.random()*number;
+            
+            document.write(`Round: ${roundNum}<br>`);
+            document.write(`Floor: ${floorNum}<br>`);
+            document.write(`Ceil: ${ceilNum}<br>`);
+            document.write(`Square Root: ${sqrtNum}<br>`);
+            document.write(`Random: ${randomNum}<br>`);
+            document.write(`</div>`);
+        }
+        show();
+    </script>
+</body>
+</html>
